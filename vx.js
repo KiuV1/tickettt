@@ -82,12 +82,9 @@ if (message.content.toLowerCase().startsWith(prefix + `close`)) {
         })
         .catch(() => {
           m.edit('Ticket close timed out, the ticket was not closed.').then(m2 => {
-              m2.delete();
-          }, 3000);
-        });
-    });
-}
+              m2.delete()
+    }
+});  
 
-});
-
-client.login(token);
+// THIS  MUST  BE  THIS  WAY
+client.login(process.env.BOT_TOKEN);
